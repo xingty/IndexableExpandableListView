@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="barPadding">5dp</dimen>
+    <dimen name="barMargin">5dp</dimen>
+    <dimen name="textLeading">1.5dp</dimen>
+    <dimen name="fontSize">14sp</dimen>
+</resources>

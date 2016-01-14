@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="IELV">
+        <attr name="indexbarFontSize" format="dimension" />
+        <attr name="indexbarBackground" format="color"/>
+        <attr name="indexbarAlpha" format="float"/>
+        <attr name="indexbarPadding" format="dimension"/>
+        <attr name="indexbarMargin" format="dimension"/>
+        <attr name="indexbarTextColor" format="color"/>
+        <attr name="showPreview" format="boolean"/>
+    </declare-styleable>
+</resources>
