@@ -2,6 +2,7 @@
 <resources>
     <dimen name="barPadding">5dp</dimen>
     <dimen name="barMargin">5dp</dimen>
-    <dimen name="textLeading">1.5dp</dimen>
+    <dimen name="textLeading">1.2dp</dimen>
     <dimen name="fontSize">14sp</dimen>
+    <dimen name="preview_text_size_default">22sp</dimen>
 </resources>

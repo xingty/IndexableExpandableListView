@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         charactes = new ArrayList<>(26) ;
         data = new ArrayList<>() ;
         char c = 'A' ;
-        for (int i=c;i<='U';i++) {
+        for (int i=c;i<='Z';i++) {
             ArrayList<String> contact = new ArrayList<>(10) ;
             for (int j=0;j<10;j++) {
                 contact.add(String.valueOf((char)i) + (j + 1)) ;

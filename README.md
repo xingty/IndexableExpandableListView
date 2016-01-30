@@ -1,13 +1,16 @@
 #IndexableExpandableListView
 相信大家都看过IOS的TableView字母快速索引功能,如果列表数据比较多,快速索引确实非常好用。而且IOS的TableView设置索引非常方便,只需要返回一个分组数组即可。反观Android并没有这么方便的控件，于是便自己写了一个。   
 
-本项目的发布离不开[https://github.com/woozzu/IndexableListView](https://github.com/woozzu/IndexableListView)，在此非常感谢作者的分享。
+本控件的发布离不开[https://github.com/woozzu/IndexableListView](https://github.com/woozzu/IndexableListView)，在此非常感谢作者的分享。
 
 相对于原项目，本项目进行了一些定制化,可以对侧边栏进行一些定制，甚至，可以做高级的定制。
 
 有问题可以在issue提出,或者到[我的博客](http://wiyi.org)留言
 
-![demo示例](./screenhost/screenhost-1.gif)
+![demo示例](./screenshot/screenshot-1.gif)
+
+支持横屏   
+![横屏](./screenshot/screenshot-2.png)
 
 #功能说明
 
@@ -62,7 +65,7 @@ listView.setIndexableAdapter(adapter);
 
 ## License
 
-    Copyright 2011-2015 Sergey Tarasevich
+    Copyright 2015 xing
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
