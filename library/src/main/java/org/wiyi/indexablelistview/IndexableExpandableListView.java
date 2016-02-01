@@ -60,10 +60,10 @@ public class IndexableExpandableListView extends ExpandableListView {
     private String[] mSections ;
     private IndexBar bar ;
 
-    private Paint mBarTextPaint ;
-    private Paint mPreviewTextPaint ;
-    private Paint mBarBgPaint ;
-    private Paint mPreviewBgPaint ;
+    private Paint mBarTextPaint ; //用于绘制索引栏内的文字
+    private Paint mPreviewTextPaint ; //绘制预览框的文字
+    private Paint mBarBgPaint ;   //绘制索引栏的背景
+    private Paint mPreviewBgPaint ;  //绘制预览框的背景
 
     private boolean mIndexable ;
 
@@ -140,11 +140,6 @@ public class IndexableExpandableListView extends ExpandableListView {
     }
 
     @Override
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-    }
-
-    @Override
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN : {
@@ -153,7 +148,7 @@ public class IndexableExpandableListView extends ExpandableListView {
 
                 if (bar != null && bar.isTouchInside(x,y)) {
                     mIsIndexing = true ;
-                    mCurrentSection = bar.getSectionByPoint(event.getY()) ;
+                    mCurrentSection = bar.getSectionByPoint(y) ;
                     setSelectedGroup(mCurrentSection);
                     return true ;
                 }
@@ -199,7 +194,7 @@ public class IndexableExpandableListView extends ExpandableListView {
             //如果存在bar又重新调用sizechange,那么有可能是转屏了
             bar = null ; //宽高改变,要创建新的bar
             initPaint();
-            initIndexBar(w,h);
+            initIndexBar(w, h);
         }
     }
 
@@ -269,7 +264,7 @@ public class IndexableExpandableListView extends ExpandableListView {
             }
 
             //屏幕可以为每个item分配的最大高度
-            float maxHeight = listviewHeight / mSections.length ;
+            float maxHeight = (listviewHeight - mBarMargin * 2 - mBarPadding * 2) / mSections.length;
             //在用户设置的字体下,每个item需要占用的高度
             float textHeight = mBarTextPaint.descent() - mBarTextPaint.ascent() + mLeading;
 
@@ -389,5 +384,21 @@ public class IndexableExpandableListView extends ExpandableListView {
 
     public void isSHowPreview(boolean mIsShowPreview) {
         this.mIsShowPreview = mIsShowPreview ;
+    }
+
+    public Paint getBarTextPaint() {
+        return mBarTextPaint ;
+    }
+
+    public Paint getBarBgPaint() {
+        return mBarBgPaint ;
+    }
+
+    public Paint getPreviewTextPaint() {
+        return mPreviewTextPaint ;
+    }
+
+    public Paint getPreviewBgPaint() {
+        return mPreviewBgPaint ;
     }
 }
