@@ -215,7 +215,15 @@ public class IndexableExpandableListView extends ExpandableListView {
         initPaint();
         mSections = ((Indexable) adapter).getSections() ;
         mIndexable = true ;
+        expandAll();
         //initIndexBar(get,getHeight()); 可能还没measure完成,无法获取listview 宽高
+    }
+
+    public void expandAll() {
+        int groupCount = getExpandableListAdapter().getGroupCount();
+        for (int i=0;i<groupCount;i++) {
+            expandGroup(i);
+        }
     }
 
     private class IndexBar {

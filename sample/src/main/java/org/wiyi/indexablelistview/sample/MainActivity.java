@@ -10,7 +10,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private IndexableExpandableListView listView ;
-    private MyAdapter adapter ;
+    private MyAdapter adapter = new MyAdapter();
     private ArrayList<String> charactes ;
     private List<ArrayList<String>> data ;
 
@@ -40,14 +40,7 @@ public class MainActivity extends AppCompatActivity {
             charactes.add(String.valueOf((char)i)) ;
         }
 
-        adapter = new MyAdapter(this) ;
         adapter.setData(charactes,data);
-
         listView.setIndexableAdapter(adapter);
-
-        int len = adapter.getGroupCount() ;
-        for (int i=0;i<len;i++) {
-            listView.expandGroup(i) ;
-        }
     }
 }

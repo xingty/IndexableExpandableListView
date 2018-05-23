@@ -1,6 +1,5 @@
 package org.wiyi.indexablelistview.sample;
 
-import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -14,13 +13,8 @@ import java.util.List;
  * Created by xing on 1/8/16.
  */
 public class MyAdapter extends IndexableListAdapter {
-    private Context context ;
     List<String> group ;
     List<ArrayList<String>> data ;
-
-    public MyAdapter(Context context) {
-        this.context = context ;
-    }
 
     public void setData(List<String> group,List<ArrayList<String>> data) {
         this.group = group ;
@@ -69,7 +63,7 @@ public class MyAdapter extends IndexableListAdapter {
     public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
         TextView view ;
         if (convertView == null) {
-            view = (TextView) View.inflate(context,android.R.layout.simple_list_item_1,null);
+            view = (TextView) View.inflate(parent.getContext(),android.R.layout.simple_list_item_1,null);
         } else {
             view = (TextView) convertView;
         }
@@ -84,7 +78,7 @@ public class MyAdapter extends IndexableListAdapter {
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
         TextView view ;
         if (convertView == null) {
-            view = (TextView) View.inflate(context,android.R.layout.simple_list_item_1,null);
+            view = (TextView) View.inflate(parent.getContext(),android.R.layout.simple_list_item_1,null);
         } else {
             view = (TextView) convertView;
         }
