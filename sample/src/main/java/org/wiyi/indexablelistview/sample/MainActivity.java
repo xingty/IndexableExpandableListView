@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        listView = (IndexableExpandableListView) findViewById(R.id.indexer);
+        listView = findViewById(R.id.indexer);
     }
 
     private void initData() {

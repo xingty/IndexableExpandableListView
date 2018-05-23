@@ -28,6 +28,7 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
+import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 
 /**
@@ -206,10 +207,13 @@ public class IndexableExpandableListView extends ExpandableListView {
         }
     }
 
-    public void setIndexableAdapter(IndexableListAdapter adapter) {
+    public void setIndexableAdapter(ExpandableListAdapter adapter) {
+        if (!(adapter instanceof Indexable)) {
+            throw new ClassCastException("you must be implementation indexable before use IndexableExpandableListView");
+        }
         setAdapter(adapter);
         initPaint();
-        mSections = adapter.getSections() ;
+        mSections = ((Indexable) adapter).getSections() ;
         mIndexable = true ;
         //initIndexBar(get,getHeight()); 可能还没measure完成,无法获取listview 宽高
     }
